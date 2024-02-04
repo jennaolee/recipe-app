@@ -1,0 +1,12 @@
+button {
+    margin: 1rem;
+}
+
+ol { 
+    padding-left: 2rem; 
+}
+
+.close-btn {
+    margin: 0 1rem 0 0;
+    padding: 1rem 2rem;
+}

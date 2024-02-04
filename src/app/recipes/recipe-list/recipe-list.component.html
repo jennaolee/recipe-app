@@ -1,0 +1,18 @@
+<div class="recipe-list">
+    <div>
+        <h1>MY RECIPES</h1>
+    </div>
+
+    <hr>
+    <div class="row">
+        <div class="col-xs-12">
+            <a href="#" class="list-group-item clearfix" *ngFor="let recipe of recipes">
+                <div class="recipe-list-item-row">
+                    <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
+                </div>
+                <app-recipe-info class="more-info-btn" [recipe]="recipe">
+                </app-recipe-info>
+            </a>
+        </div>
+    </div>
+</div>

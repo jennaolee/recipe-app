@@ -1,0 +1,17 @@
+.recipe-list {
+    margin: 1rem 3rem;
+}
+
+.recipe-list-item-row {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.more-info-btn {
+   float: right;
+}
+
+h4 {
+    padding: 1rem;
+    font-size: 2.5rem;
+}

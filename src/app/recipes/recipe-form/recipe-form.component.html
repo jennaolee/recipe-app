@@ -1,0 +1,43 @@
+<div class="add-recipe-btn">
+    <button class="btn btn-success" (click) = "togglePopUp()"><h5>ADD NEW RECIPE</h5></button> 
+    <hr>
+</div>
+
+<form tabindex="-1" role="dialog" id="recipe_form"
+[formGroup]="form"
+(ngSubmit)="onSubmit(form.value)"
+[ngStyle]="{'display':displayStyle}">
+
+    <fieldset>
+        <div role="document">
+            <div>
+                <h1>NEW RECIPE</h1>
+                <div class="form-container">
+                    <section class="form-group row">
+                        <label for="name" class="col-sm-3 col-form-label">Name</label>
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Name" value="" formControlName="name" required>
+                    </section>
+                </div>
+
+                <div class="form-container">
+                    <section class="form-group row">
+                        <label for="ingredients" class="col-sm-3 col-form-label">Ingredients</label>
+                        <textarea type="text" name="ingredients" class="form-control" id="ingredients" placeholder="Separate ingredients with a new line" value="" formControlName="ingredients" rows="4" cols="50" ng-model="ingredients" ng-list required ></textarea>
+                    </section>
+                </div>
+
+                <div class="form-container">
+                    <section class="form-group row">
+                        <label for="directions" class="col-sm-3 col-form-label">Directions</label>
+                        <textarea type="text" name="directions" class="form-control" id="directions" placeholder="Separate directions with a new line" value="" formControlName="directions" rows="6" cols="50" required ></textarea>
+                    </section>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-success" [disabled]="!form.valid"><h5>SAVE</h5></button>
+                <button type="button" class="btn btn-danger" (click)="closePopUp()"><h5>RESET</h5></button>
+            </div>
+        </div>
+    </fieldset>
+</form>

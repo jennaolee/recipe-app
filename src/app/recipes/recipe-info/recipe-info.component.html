@@ -1,0 +1,66 @@
+<form class="modal" tabindex="-1" role="dialog"
+[ngStyle]="{'display':displayStyle}">
+
+    <fieldset>
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title">{{ recipeName }}</h1>
+            </div>
+            <div class="modal-body form-container">
+            <section class="form-group row">
+                <label for="name" class="col-sm-3 col-form-label name"><h5>Date Modified:</h5></label>
+                    <section class="col-sm-9">
+                        {{ recipe.date | date: 'yyyy-MM-dd (h:mm a)'}}
+                    </section>
+            </section>
+
+            <section class="form-group row">
+                <label for="name" class="col-sm-3 col-form-label phone"><h5>Ingredients:</h5></label>
+                    <section class="col-sm-9">
+                        <ol>
+                            <ng-container *ngFor="let ingredient of recipeIngredients">
+                                <li>{{ ingredient }}</li>
+                            </ng-container>
+                        </ol>
+                    </section>
+            </section>
+
+            <section class="form-group row">
+                <label for="name" class="col-sm-3 col-form-label breed"><h5>Directions:</h5></label>
+                    <section class="col-sm-9">
+                        <ol>
+                            <ng-container *ngFor="let direction of recipeDirections">
+                                <li>{{ direction }}</li>
+                            </ng-container>
+                        </ol>
+                    </section>
+            </section>
+
+            </div> 
+            <div class="modal-footer">
+            <button type="button" class="btn btn-danger close-btn" (click)="closePopup()"><h5>Close</h5></button>
+            </div>
+        </div> 
+        
+        </div>
+   
+    </fieldset>        
+
+</form>
+
+<button 
+    class="btn btn-info"
+    id="delete"
+    (click)="openPopup($event, recipe)"><h5>MORE INFO</h5>
+</button>
+
+<button 
+class="btn btn-danger"
+id="delete"
+(click)="deleteRecipe(recipe.name)"><h5>DELETE</h5>
+</button>
+
+
+
+
