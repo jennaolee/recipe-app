@@ -12,6 +12,6 @@ ol {
 }
 
 .scrollable{
-    height: 600px;
+    height: 375px;
     overflow-y: scroll;
   }
