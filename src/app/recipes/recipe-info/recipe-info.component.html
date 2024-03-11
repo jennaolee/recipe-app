@@ -1,3 +1,20 @@
+<div class="button-actions">
+    <button 
+        class="btn btn-danger"
+        id="delete"
+        (click)="deleteRecipe(recipe.id)"><h5>DELETE</h5>
+    </button>
+    
+    <button 
+        class="btn btn-info"
+        id="delete"
+        (click)="openPopup($event, recipe)"><h5>MORE INFO</h5>
+    </button>
+
+    <app-recipe-update-form [recipe]="recipe">
+    </app-recipe-update-form>
+</div>
+
 <form class="modal" tabindex="-1" role="dialog"
 [ngStyle]="{'display':displayStyle}">
 
@@ -39,7 +56,7 @@
 
             </div> 
             <div class="modal-footer">
-            <button type="button" class="btn btn-danger close-btn" (click)="closePopup()"><h5>Close</h5></button>
+                <button type="button" class="btn btn-danger close-btn" (click)="closePopup()"><h5>Close</h5></button>
             </div>
         </div> 
         
@@ -49,17 +66,9 @@
 
 </form>
 
-<button 
-    class="btn btn-info"
-    id="delete"
-    (click)="openPopup($event, recipe)"><h5>MORE INFO</h5>
-</button>
 
-<button 
-class="btn btn-danger"
-id="delete"
-(click)="deleteRecipe(recipe.name)"><h5>DELETE</h5>
-</button>
+
+
 
 
 

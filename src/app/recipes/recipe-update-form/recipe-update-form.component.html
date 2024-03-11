@@ -1,0 +1,52 @@
+<button 
+    class="btn btn-primary more-info-btn"
+    id="delete"
+    (click)="openPopup($event, recipe)"><h5>UPDATE</h5>
+</button>
+
+<form tabindex="-1" role="dialog" id="recipe_form"
+[formGroup]="form"
+(ngSubmit)="onSubmit(form.value)"
+[ngStyle]="{'display':displayStyle}">
+
+    <fieldset>
+        <div class="modal-dialog" role="document">
+            <div>
+                <h1>UPDATE RECIPE</h1>
+                <div class="form-container">
+                    <section class="form-group row">
+                        <label for="name" class="col-sm-3 col-form-label name-label">Name</label>
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Name" value="" formControlName="name" required>
+                    </section>
+                </div>
+
+                <div class="form-container">
+                    <section class="form-group row">
+                        <label for="ingredients" class="col-sm-3 col-form-label">Ingredients</label>
+                        <textarea type="text" name="ingredients" class="form-control" id="ingredients" placeholder="Separate ingredients with a new line" value="" formControlName="ingredients" rows="4" cols="50" ng-model="ingredients" ng-list required ></textarea>
+                    </section>
+                </div>
+
+                <div class="form-container">
+                    <section class="form-group row">
+                        <label for="directions" class="col-sm-3 col-form-label">Directions</label>
+                        <textarea type="text" name="directions" class="form-control" id="directions" placeholder="Separate directions with a new line" value="" formControlName="directions" rows="6" cols="50" required ></textarea>
+                    </section>
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-success save-button" [disabled]="!form.valid"><h4>Save</h4></button>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</form>
+
+
+
+
+
+
+
+
+

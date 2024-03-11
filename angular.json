@@ -61,7 +61,8 @@
               "buildTarget": "recipe-app:build:production"
             },
             "development": {
-              "buildTarget": "recipe-app:build:development"
+              "buildTarget": "recipe-app:build:development",
+              "port": 3000
             }
           },
           "defaultConfiguration": "development"

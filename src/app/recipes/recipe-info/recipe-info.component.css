@@ -1,5 +1,6 @@
 button {
     margin: 1rem;
+    float: right;
 }
 
 ol { 
@@ -12,6 +13,11 @@ ol {
 }
 
 .scrollable{
-    height: 375px;
+    height: 400px;
     overflow-y: scroll;
-  }
+}
+
+.button-actions {
+    position: relative;
+    /* float: right; */
+}

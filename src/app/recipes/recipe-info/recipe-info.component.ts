@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Pipe, PipeTransform } from '@angular/core';
 import { Recipe } from '../recipe.model';
 import { RecipeService } from '../../recipe.service';
+import { RecipeUpdateFormComponent } from "../recipe-update-form/recipe-update-form.component";
 
 @Pipe({  name: 'dateCount'}) 
 export class DateCountPipe implements PipeTransform {  
@@ -25,14 +26,15 @@ export class DateCountPipe implements PipeTransform {
 }
 
 @Component({
-  selector: 'app-recipe-info',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './recipe-info.component.html',
-  styleUrl: './recipe-info.component.css'
+    selector: 'app-recipe-info',
+    standalone: true,
+    templateUrl: './recipe-info.component.html',
+    styleUrl: './recipe-info.component.css',
+    imports: [CommonModule, RecipeUpdateFormComponent]
 })
 export class RecipeInfoComponent {
   displayStyle = "none";
+  myRecipe: any;
   recipeIngredients: string[] = [];
   recipeDirections: string[] = [];
   recipeName: string = "";
@@ -66,7 +68,7 @@ export class RecipeInfoComponent {
         this.recipeDirections[i] = this.recipeDirections[i][0].toUpperCase() + this.recipeDirections[i].substring(1).toLowerCase();
       }
     }
-
+    evt["id"] = recipe.id;
     evt["name"] = recipe.name;
     evt["ingredients"] = recipe.ingredients;
     evt["directions"] = recipe.directions;
@@ -78,7 +80,11 @@ export class RecipeInfoComponent {
     this.displayStyle = "none";
   }
 
-  deleteRecipe(name: string) {
-    this.recipeService.delete(name);
+  updateRecipe() {
+    this.closePopup();
+  }
+
+  deleteRecipe(id: number) {
+    this.recipeService.delete(id);
   }
 }

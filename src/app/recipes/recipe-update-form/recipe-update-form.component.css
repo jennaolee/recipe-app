@@ -1,0 +1,54 @@
+/* .close-btn {
+    margin: 0 1rem 0 0;
+    padding: 1rem 2rem;
+} */
+
+form {
+    margin: 1rem 3rem;
+}
+
+h1 {
+    margin-right: 20rem;
+}
+
+.row {
+    margin: 10px;
+}
+
+label {
+    font-size: 2rem;
+    margin: 0 -1.5rem;
+}
+
+.modal-footer {
+    margin: 20px;
+}
+
+button {
+    margin: 1rem;
+    float: right;
+}
+
+.add-recipe-btn {
+    margin: 0 3rem;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.form-container {
+    margin: 2rem 0;
+}
+
+.save-button {
+    margin: 1rem;
+    float: right ;
+}
+
+
+/* .close-btn {
+    margin: 0 1rem 0 0;
+    padding: 1rem 2rem;
+} */
+
